@@ -1,0 +1,13 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <h1>New Session</h1>
+    <input type="text" name="sessionName"> 
+    <fieldset>
+        <legend><h3>Add exercices to session</h3></legend>
+        {% for exercice in exercice_list %}
+            <input type="text" name="exercice" id="{{ exercice.id }}" value="{{ exercice.name }}">
+            <input type="number" name="Reps" id="reps"> <br/>
+        {% endfor %}
+    </fieldset>
+    <input type="submit" value="Ajouter">
+</form>
